@@ -62,7 +62,7 @@ php artisan make:resource CityResource
 ```
 
 
-##Usage
+## Usage
 
 //Access the url from the code added in routes/api.php
 
