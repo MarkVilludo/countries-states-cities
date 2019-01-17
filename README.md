@@ -10,7 +10,16 @@ Laravel package for addresses that mostly used for dropdown in form.
 composer require mark-villudo/countries-states-cities
 
 ```
-2. Publish Seeder and Migration files
+
+2. Now add the service provider in config/app.php file:
+
+```
+'providers' => [
+    // ...
+    MarkVilludo\Permission\PermissionServiceProvider::class,
+];
+```
+3. Publish Seeder and Migration files
 
 You can publish the migration with:
 
@@ -35,7 +44,7 @@ You can publish its default controllers
 php artisan vendor:publish --provider="MarkVilludo\CountryStateCities\ServiceProvider" --tag="controllers"
 
 ```
-3. Add this route in routes/api.php
+4. Add this route in routes/api.php
 ```
 
 Route::prefix('v1')->group(function () {
