@@ -39,7 +39,6 @@ php artisan vendor:publish --provider="MarkVilludo\CountryStateCities\ServicePro
 ```
 
 Route::prefix('v1')->group(function () {
-
 	//Country, Province/State and City
 	Route::prefix('countries')->group(function () {
 		Route::get('/','Api\CountryController@index');
@@ -48,7 +47,6 @@ Route::prefix('v1')->group(function () {
 	Route::prefix('provinces')->group(function () {
 		Route::get('/{id}/cities','Api\CityController@index');
 	});
-
 });
 
 ```
