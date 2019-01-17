@@ -3,7 +3,6 @@
 namespace MarkVilludo\CountryStateCities;
 
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
-use MarkVilludo\CountryStateCities\CountryStateCities;
 
 class ServiceProvider extends BaseServiceProvider {
     
@@ -23,6 +22,12 @@ class ServiceProvider extends BaseServiceProvider {
         $this->publishes([
             __DIR__.'/../seeds' => $this->app->databasePath().'/seeds',
         ], 'seeder');
+
+        //publish also controllers
+        $this->publishes([
+          __DIR__.'/../Controllers/' => 'app/Http/Controllers/Api',
+        ],'controllers');
+        //end
 
     }
 
