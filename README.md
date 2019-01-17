@@ -16,7 +16,7 @@ composer require mark-villudo/countries-states-cities
 ```
 'providers' => [
     // ...
-    MarkVilludo\Permission\PermissionServiceProvider::class,
+    MarkVilludo\CountryStateCities\ServiceProvider::class,
 ];
 ```
 3. Publish Seeder and Migration files
