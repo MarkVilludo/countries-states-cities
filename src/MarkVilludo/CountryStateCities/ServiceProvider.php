@@ -14,7 +14,17 @@ class ServiceProvider extends BaseServiceProvider {
      */
     public function boot()
     {      
+        // Publish the migration
+        $timestamp = date('Y_m_d_His', time());
+        $this->publishes([
+            __DIR__.'/../migrations' => $this->app->databasePath().'/migrations',
+        ], 'migrations');
         
+        // Publish seeder
+        $this->publishes([
+            __DIR__.'/../seeds' => $this->app->databasePath().'/seeds',
+        ], 'seeder');
+
     }
 
     /**
