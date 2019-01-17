@@ -1,5 +1,5 @@
-# laravel-login
-Laravel package API and in CMS login.
+# countries-states-cities
+Laravel package for addresses that mostly used for dropdown in form.
 
 ## Installation
 
