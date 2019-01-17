@@ -53,10 +53,19 @@ Route::prefix('v1')->group(function () {
 
 ```
 
+4. Make resource file for models. for Countries, Provinces, and Cities.
 
-##Usage
-
+```
+php artisan make:resource CountryResource
+php artisan make:resource ProvinceResource
+php artisan make:resource CityResource
 ```
 
 
+##Usage
+
+//Access the url from the code added in routes/api.php
+
+```
+php artisan serve
 ```
