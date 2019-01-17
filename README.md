@@ -102,10 +102,13 @@ Route::prefix('v1')->group(function () {
 
 ## Usage
 
-//Access the url from the code added in routes/api.php
+//Serve app. `php artisan serve`
 
+//Access the url from the code added in routes/api.php
 ```
-php artisan serve
+http://127.0.0.1:8000/api/v1/countries
+http://127.0.0.1:8000/api/v1/countries/169/provinces
+http://127.0.0.1:8000/api/v1/provinces/46/cities
 ```
 
 ## License
