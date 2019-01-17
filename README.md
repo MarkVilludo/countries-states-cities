@@ -29,11 +29,36 @@ php artisan vendor:publish --provider="MarkVilludo\CountryStateCities\ServicePro
 
 ```
 
+Then, run
+```
+
+php artisan migrate
+
+```
+
 You can publish the seeder with:
 
 ```
 
 php artisan vendor:publish --provider="MarkVilludo\CountryStateCities\ServiceProvider" --tag="seeder"
+
+```
+
+Declare added seeder in DatabaseSeeder.php
+
+```
+public function run()
+{
+	$this->call(CountryTableSeeder::class);
+	$this->call(ProvincesTableSeeder::class);
+	$this->call(CitiesTableSeeder::class);
+}
+```
+
+Then, run
+```
+
+php artisan db:seed
 
 ```
 
@@ -44,7 +69,22 @@ You can publish its default controllers
 php artisan vendor:publish --provider="MarkVilludo\CountryStateCities\ServiceProvider" --tag="controllers"
 
 ```
-4. Add this route in routes/api.php
+
+4. Make resource file for models. for Countries, Provinces, and Cities.
+
+```
+php artisan make:resource CountryResource
+php artisan make:resource ProvinceResource
+php artisan make:resource CityResource
+```
+
+```
+php artisan make:model Models/Country
+php artisan make:model Models/Province
+php artisan make:model Models/City
+```
+
+5. Add this route in routes/api.php
 ```
 
 Route::prefix('v1')->group(function () {
@@ -60,13 +100,7 @@ Route::prefix('v1')->group(function () {
 
 ```
 
-4. Make resource file for models. for Countries, Provinces, and Cities.
 
-```
-php artisan make:resource CountryResource
-php artisan make:resource ProvinceResource
-php artisan make:resource CityResource
-```
 
 
 ## Usage
