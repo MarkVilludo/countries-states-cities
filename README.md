@@ -49,9 +49,9 @@ Declare added seeder in DatabaseSeeder.php
 ```
 public function run()
 {
-	$this->call(CountryTableSeeder::class);
-	$this->call(ProvincesTableSeeder::class);
-	$this->call(CitiesTableSeeder::class);
+  $this->call(CountryTableSeeder::class);
+  $this->call(ProvincesTableSeeder::class);
+  $this->call(CitiesTableSeeder::class);
 }
 ```
 
@@ -88,20 +88,17 @@ php artisan make:model Models/City
 ```
 
 Route::prefix('v1')->group(function () {
-	//Country, Province/State and City
-	Route::prefix('countries')->group(function () {
-		Route::get('/','Api\CountryController@index');
-		Route::get('/{id}/provinces','Api\ProvinceController@index');
-	});
-	Route::prefix('provinces')->group(function () {
-		Route::get('/{id}/cities','Api\CityController@index');
-	});
+  //Country, Province/State and City
+  Route::prefix('countries')->group(function () {
+    Route::get('/','Api\CountryController@index');
+    Route::get('/{id}/provinces','Api\ProvinceController@index');
+  });
+  Route::prefix('provinces')->group(function () {
+    Route::get('/{id}/cities','Api\CityController@index');
+  });
 });
 
 ```
-
-
-
 
 ## Usage
 
