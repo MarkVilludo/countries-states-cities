@@ -44,7 +44,7 @@ php artisan vendor:publish --provider="MarkVilludo\CountryStateCities\ServicePro
 
 ```
 
-Declare added seeder in DatabaseSeeder.php
+Declare published seeder in DatabaseSeeder.php
 
 ```
 public function run()
